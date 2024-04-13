@@ -9,6 +9,12 @@ namespace WpfApp1
     /// </summary>
     public partial class App : Application
     {
+        public const string hello = "Hello world";
+
+        public void helloWorld()
+        {
+            int length = hello.Length;
+        }
     }
 
 }
