@@ -1,0 +1,86 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfApp1="clr-namespace:WpfApp1"
+                    xmlns:local="clr-namespace:WpfApp1"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <Grid x:Key="InfoTab">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*" />
+            <RowDefinition Height="0.55*" />
+            <RowDefinition Height="0.15*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                   Fill="Gray" Height="2" />
+        <Image Source="https://pikuco.ru/upload/test_stable/87d/87db37e35e0cd6687a71381f1005da89.webp" VerticalAlignment="Stretch" Grid.Row="0"
+               Grid.Column="0" Margin="0,8,0,8" />
+        <Grid Grid.Row="0" Grid.Column="1" Margin="8,8,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Объединенный институт проблем информатики" FontWeight="Bold" Margin="0,0,0,8"
+                           TextWrapping="Wrap" HorizontalAlignment="Center">
+                    <TextBlock.FontSize>
+                        <MultiBinding>
+                            <MultiBinding.Converter>
+                                <wpfApp1:FontSizeConverter />
+                            </MultiBinding.Converter>
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                        </MultiBinding>
+                    </TextBlock.FontSize>
+                </TextBlock>
+                <TextBlock Text="Национальной Академии Наук Республики Беларусь" Margin="0" TextWrapping="Wrap"
+                           HorizontalAlignment="Center">
+                    <TextBlock.FontSize>
+                        <MultiBinding>
+                            <MultiBinding.Converter>
+                                <wpfApp1:FontSizeConverter />
+                            </MultiBinding.Converter>
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                        </MultiBinding>
+                    </TextBlock.FontSize>
+                </TextBlock>
+                <TextBlock Text="Телефоны: 88005553535" Margin="0, 12, 0 , 0" TextWrapping="Wrap"
+                           HorizontalAlignment="Center">
+                    <TextBlock.FontSize>
+                        <MultiBinding>
+                            <MultiBinding.Converter>
+                                <wpfApp1:FontSizeConverter />
+                            </MultiBinding.Converter>
+                            <Binding Path="ActualHeight" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                            <Binding Path="ActualWidth" RelativeSource="{RelativeSource AncestorType=Grid}" />
+                        </MultiBinding>
+                    </TextBlock.FontSize>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+        <Rectangle Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                   Fill="Gray" Height="2" />
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Top"
+                    Margin="0, 16, 0, 16" Orientation="Vertical">
+            <TextBlock
+                Text="СИСТЕМА ИНФОРМАЦИОННОЙ ПОДДЕРЖКИ КОНСТРУКТОРСКО-ТЕХНОЛОГИЧЕСКОЙ ПОЖГОТОВКИ АДДИТИВНОГО ПРОИЗВОДСТВА (ИППКТП АП)"
+                FontSize="44" Margin="150, 16, 150, 16" TextWrapping="Wrap" HorizontalAlignment="Center"
+                FontWeight="Bold" VerticalAlignment="Center" />
+            <TextBlock Text="Версия: 1.0 2024 года" FontSize="24" Margin="0, 36, 0 , 0" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" />
+            <TextBlock Text="Все права зарезервированы СИГИ НАН РБ" FontSize="24"
+                       Margin="0, 8, 0 , 0" TextWrapping="Wrap" HorizontalAlignment="Center" />
+        </StackPanel>
+        <Rectangle Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                   Fill="Gray" Height="2" />
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                    Orientation="Vertical">
+            <TextBlock Text="Проект разработан студентами группы СП091: Филипеней М.Д. и Богатыревым А.В."
+                       FontSize="28" TextWrapping="Wrap"
+                       HorizontalAlignment="Center" />
+        </StackPanel>
+
+    </Grid>
+</ResourceDictionary>
