@@ -4,13 +4,15 @@
                     xmlns:local="clr-namespace:WpfApp1"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <Grid x:Key="ProjectElementsTab">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
+        
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.25*" />
+            <RowDefinition Height="0.20*" />
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
@@ -25,20 +27,11 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Button Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0">
+                <Button x:Name="bInput" Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0">
                     <Viewbox Stretch="Uniform">
                         <StackPanel Orientation="Vertical">
                             <Image Source="https://cdn-icons-png.flaticon.com/512/1432/1432525.png" Height="20" Width="20" />
                             <TextBlock Text="Ввод" FontSize="12"/>
-                        </StackPanel>
-                    </Viewbox>
-                </Button>
-
-                <Button Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0" Grid.Column="1">
-                    <Viewbox Stretch="Uniform">
-                        <StackPanel Orientation="Vertical">
-                            <Image Source="https://cdn-icons-png.flaticon.com/512/5996/5996831.png" Height="20" Width="20" />
-                            <TextBlock Text="Корректировка" FontSize="12"/>
                         </StackPanel>
                     </Viewbox>
                 </Button>
@@ -68,17 +61,15 @@
 
         <Grid Background="White" Row="1" Grid.RowSpan="3" Column="0" >
             
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical" Margin="0,16,0,0">
                 
                 <TreeView x:Name="tvObjects" FontSize="16">
                 
-                    <TreeViewItem Header="Объекты">
-                        <TreeViewItem Header="что-то еще">
+                    <TreeViewItem Header="Проекты" x:Name="tviProjects">
                             <TreeViewItem Header="Файл 1"/>
                             <TreeViewItem Header="Файл 2"/>
                             <TreeViewItem Header="Файл 3"/>
                             <TreeViewItem Header="Файл 4"/>
-                        </TreeViewItem>
                     </TreeViewItem>
                 
                 </TreeView>
@@ -101,8 +92,6 @@
             <Border Background="Gray" Width="1" HorizontalAlignment="Right"/>
             
         </Grid>
-        
-        
 
         <Grid Grid.Column="1" Background="LightGray" Grid.Row="1" Grid.RowSpan="3">
             <StackPanel Orientation="Vertical">
@@ -252,6 +241,5 @@
             </Setter.Value>
         </Setter>
     </Style>
-
     
 </ResourceDictionary>

@@ -9,6 +9,8 @@
 
     <Window.Resources>
         <ResourceDictionary>
+            <FontSizeConverter x:Key="FontSizeConverter" />
+            
             <Style x:Key="TaskButtonStyle" TargetType="Button">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="BorderThickness" Value="0" />
@@ -35,6 +37,7 @@
                 <ResourceDictionary Source="info.xaml" />
                 <ResourceDictionary Source="ProjectElements.xaml" />
             </ResourceDictionary.MergedDictionaries>
+            
         </ResourceDictionary>
     </Window.Resources>
 
