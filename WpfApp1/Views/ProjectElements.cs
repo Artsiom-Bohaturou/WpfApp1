@@ -3,18 +3,12 @@ using System.Windows.Controls;
 
 namespace WpfApp1.Views;
 
-public class ProjectElements
+public partial class ProjectElements
 {
-    
 
-    public ProjectElements()
+    private void bInputHandler(object sender, RoutedEventArgs e)
     {
-        
+        NewProjectWindow window = new NewProjectWindow();
+        window.Show();
     }
-
-    private void InputButtonClick(object sender, RoutedEventArgs e)
-    {
-        
-    }
-
 }

@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:wpfApp1="clr-namespace:WpfApp1"
                     xmlns:local="clr-namespace:WpfApp1"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    x:Class="WpfApp1.Views.ProjectElements">
     <Grid x:Key="ProjectElementsTab">
         
         <Grid.ColumnDefinitions>
@@ -27,7 +28,10 @@
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
 
-                <Button x:Name="bInput" Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0">
+                <Button 
+                        x:Name="bInput" Background="LightSteelBlue" 
+                        BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0"
+                        Click="bInputHandler">
                     <Viewbox Stretch="Uniform">
                         <StackPanel Orientation="Vertical">
                             <Image Source="https://cdn-icons-png.flaticon.com/512/1432/1432525.png" Height="20" Width="20" />

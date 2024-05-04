@@ -21,4 +21,9 @@ public partial class MainWindow : Window
         Projects = new ObservableCollection<Project>(context.Projects);
         
     }
+    
+    private void bInput_Click(object sender, RoutedEventArgs e)
+    {
+        
+    }
 }

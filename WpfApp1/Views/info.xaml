@@ -44,7 +44,7 @@
                         </MultiBinding>
                     </TextBlock.FontSize>
                 </TextBlock>
-                <TextBlock Text="Телефоны: 88005553535" Margin="0, 12, 0 , 0" TextWrapping="Wrap"
+                <TextBlock Text="Телефоны: (017) 378-21-46 (017) 379-21-45" Margin="0, 12, 0 , 0" TextWrapping="Wrap"
                            HorizontalAlignment="Center">
                     <TextBlock.FontSize>
                         <MultiBinding>
@@ -69,7 +69,7 @@
                 FontWeight="Bold" VerticalAlignment="Center" />
             <TextBlock Text="Версия: 1.0 2024 года" FontSize="24" Margin="0, 36, 0 , 0" TextWrapping="Wrap"
                        HorizontalAlignment="Center" />
-            <TextBlock Text="Все права зарезервированы СИГИ НАН РБ" FontSize="24"
+            <TextBlock Text="Все права зарезервированы ОИПИ НАН РБ" FontSize="24"
                        Margin="0, 8, 0 , 0" TextWrapping="Wrap" HorizontalAlignment="Center" />
         </StackPanel>
         <Rectangle Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
