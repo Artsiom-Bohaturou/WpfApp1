@@ -17,13 +17,8 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         DataContext = this;
-        
+        WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Projects = new ObservableCollection<Project>(context.Projects);
-        
-    }
-    
-    private void bInput_Click(object sender, RoutedEventArgs e)
-    {
         
     }
 }
