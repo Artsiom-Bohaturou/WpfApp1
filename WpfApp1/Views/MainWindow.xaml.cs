@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 using WpfApp1.Contexts;
 using WpfApp1.Models;
 
@@ -16,7 +17,7 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
         DataContext = this;
-        
+        WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Projects = new ObservableCollection<Project>(context.Projects);
         
     }

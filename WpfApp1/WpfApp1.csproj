@@ -27,7 +27,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="FontSizeConverter.cs">
+      <DependentUpon>info.xaml</DependentUpon>
+    </Compile>
     <Page Update="Windows\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditProjectForm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <XamlRuntime>Wpf</XamlRuntime>
       <SubType>Designer</SubType>
@@ -44,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="images\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

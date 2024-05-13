@@ -1,0 +1,245 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:wpfApp1="clr-namespace:WpfApp1"
+                    xmlns:local="clr-namespace:WpfApp1"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    x:Class="WpfApp1.Views.ProjectElements">
+    <Grid x:Key="ProjectElementsTab">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.20*" />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Background="LightSteelBlue" Grid.Row="0" Grid.ColumnSpan="3">
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    x:Name="bInput" Background="LightSteelBlue"
+                    BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0"
+                    Click="bInputHandler">
+                    <Viewbox Stretch="Uniform">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/1432/1432525.png" Height="20"
+                                   Width="20" />
+                            <TextBlock Text="Ввод" FontSize="12" />
+                        </StackPanel>
+                    </Viewbox>
+                </Button>
+
+                <Button Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0" Grid.Column="2">
+                    <Viewbox Stretch="Uniform">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="https://cdn-icons-png.flaticon.com/512/6048/6048190.png" Height="20"
+                                   Width="20" />
+                            <TextBlock Text="Удаление" />
+                        </StackPanel>
+                    </Viewbox>
+                </Button>
+
+                <Button Background="LightSteelBlue" BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0" Grid.Column="3">
+                    <Viewbox Stretch="Uniform">
+                        <StackPanel Orientation="Vertical">
+                            <Image Source="https://static-00.iconduck.com/assets.00/success-icon-512x512-qdg1isa0.png"
+                                   Height="20" Width="20" />
+                            <TextBlock Text="Редактирование" />
+                        </StackPanel>
+                    </Viewbox>
+                </Button>
+            </Grid>
+
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                       Fill="SteelBlue" Height="2" Margin="0,8,0,0" />
+        </Grid>
+
+        <Grid Background="White" Row="1" Grid.RowSpan="3" Column="0">
+
+            <StackPanel Orientation="Vertical" Margin="0,16,0,0">
+
+                <TreeView x:Name="tvObjects" FontSize="16">
+
+                    <TreeViewItem Header="Проекты" x:Name="tviProjects" Selected="tvSelectedListener">
+                        <TreeViewItem Header="Файл 1" />
+                        <TreeViewItem Header="Файл 2" />
+                        <TreeViewItem Header="Файл 3" />
+                        <TreeViewItem Header="Файл 4" />
+                    </TreeViewItem>
+
+                </TreeView>
+
+                <TreeView x:Name="tvLibModels" FontSize="16">
+
+                    <TreeViewItem Header="Библиотека моделей">
+                        <TreeViewItem Header="название библиотеки">
+                            <TreeViewItem Header="Файл 1" />
+                            <TreeViewItem Header="Файл 2" />
+                            <TreeViewItem Header="Файл 3" />
+                            <TreeViewItem Header="Файл 4" />
+                        </TreeViewItem>
+                    </TreeViewItem>
+
+                </TreeView>
+
+            </StackPanel>
+
+            <Border Background="Gray" Width="1" HorizontalAlignment="Right" />
+
+        </Grid>
+
+        <Grid Grid.Column="1" Background="LightGray" Grid.Row="1" Grid.RowSpan="3">
+            <StackPanel Orientation="Vertical">
+                <TextBlock
+                    Text="Элемент конструкции"
+                    HorizontalAlignment="Left"
+                    Margin="4,8,0,0"
+                    FontWeight="Bold" />
+
+                <TextBlock
+                    Text="Расположение файла"
+                    HorizontalAlignment="Left"
+                    Margin="16,8,0,0"
+                    FontWeight="Bold" />
+
+                <TextBox
+                    x:Name="tbSourceFile"
+                    Margin="16,8,16,0" />
+
+                <TextBlock
+                    Text="Наименование"
+                    HorizontalAlignment="Left"
+                    Margin="16,8,0,0"
+                    FontWeight="Bold" />
+
+                <TextBox
+                    x:Name="tbFileName"
+                    Margin="16,8,16,0" />
+
+                <Rectangle Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"
+                           Fill="Gray" Height="1" Margin="0,8,0,0" />
+
+            </StackPanel>
+
+            <Border Background="Gray" Width="1" HorizontalAlignment="Right" />
+        </Grid>
+
+        <Grid Grid.Column="2" Background="LightGray" Grid.Row="1" Grid.RowSpan="3">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock
+                        Text="Чертеж"
+                        HorizontalAlignment="Left"
+                        Margin="4,8,0,0"
+                        FontWeight="Bold" />
+
+                    <Image Height="80" />
+
+                    <TextBlock
+                        Text="Слайд чертежа"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+
+                    <TextBox
+                        x:Name="tbPrintSlide"
+                        Margin="16,8,16,0" />
+
+                    <TextBlock
+                        Text="Чертеж"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+                    <TextBox
+                        x:Name="tbPrint"
+                        Margin="16,8,16,0" />
+
+                    <TextBlock
+                        Text="Модель"
+                        HorizontalAlignment="Left"
+                        Margin="4,8,0,0"
+                        FontWeight="Bold" />
+
+                    <Image Height="80" />
+
+                    <TextBlock
+                        Text="Слайд модели"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+
+                    <TextBox
+                        x:Name="tbModelSlide"
+                        Margin="16,8,16,0" />
+
+                    <TextBlock
+                        Text="Модель"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+
+                    <TextBox
+                        x:Name="tbModel"
+                        Margin="16,8,16,0" />
+
+                    <TextBlock
+                        Text="Сборка"
+                        HorizontalAlignment="Left"
+                        Margin="4,8,0,0"
+                        FontWeight="Bold" />
+
+                    <Image Height="80" />
+
+                    <TextBlock
+                        Text="Слайд сборки"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+
+                    <TextBox
+                        x:Name="tbBuildSlide"
+                        Margin="16,8,16,0" />
+
+                    <TextBlock
+                        Text="Сборка"
+                        HorizontalAlignment="Left"
+                        Margin="16,8,0,0" />
+
+                    <TextBox
+                        x:Name="tbBuild"
+                        Margin="16,8,16,0" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+    <Style x:Key="TaskButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Padding" Value="8" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="LightBlue" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
