@@ -1,6 +1,5 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
 using WpfApp1.Contexts;
 using WpfApp1.Models;
 
@@ -20,5 +19,9 @@ public partial class MainWindow : Window
         WindowStartupLocation = WindowStartupLocation.CenterScreen;
         Projects = new ObservableCollection<Project>(context.Projects);
         
+        foreach (var project in Projects)
+        {
+            project.Elements = new ObservableCollection<ProjectElement>(context.ProjectElements.Where(element => element.Project.Id == project.Id));
+        }
     }
 }

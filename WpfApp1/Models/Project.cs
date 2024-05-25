@@ -10,7 +10,7 @@ public class Project
     public float? ReadyPercentage { get; set; }
     public DateTime? ProjectRegistrationDate { get; set; }
     
-    public virtual ObservableCollection<ProjectElement> Elements { get; private set; } = new ObservableCollection<ProjectElement>();
+    public virtual ObservableCollection<ProjectElement> Elements { get; set; }
     
     public List<ParameterValue> ParameterValues { get; } = [];
 }

@@ -1,4 +1,5 @@
 using System.Windows;
+using WpfApp1.Services;
 using WpfApp1.Views;
 
 namespace WpfApp1;
@@ -16,6 +17,7 @@ public class App : Application
     protected override void OnStartup(StartupEventArgs e)
     {
         _mainWindow.Show();
+        var a = new Solidworks();
         base.OnStartup(e);
     }
 }
