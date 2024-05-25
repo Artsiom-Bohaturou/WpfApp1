@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using WpfApp1.Contexts;
+using WpfApp1.Services;
 using WpfApp1.Views;
 
 namespace WpfApp1;
@@ -27,6 +28,7 @@ public class Program
                 {
                     services.AddSingleton<App>();
                     services.AddSingleton<MainWindow>();
+                    services.AddSingleton<AddIn>();
                 }
 
                 services.AddDbContext<ApplicationContext>(options => options.UseMySql(
@@ -36,6 +38,8 @@ public class Program
                 );
             })
             .Build();
+        
+        var a = new AddIn();
 
         var app = host.Services.GetService<App>();
         app?.Run();

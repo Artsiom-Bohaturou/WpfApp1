@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DuEDrawingControl" Version="1.0.2" />
     <PackageReference Include="Marques.EFCorev8.0.SnakeCase" Version="1.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
@@ -26,6 +27,7 @@
     <PackageReference Include="MySql.Data" Version="8.3.0" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="8.0.2" />
     <PackageReference Include="Xarial.XCad.SolidWorks" Version="0.8.0" />
+    <PackageReference Include="Xarial.XCad.Toolkit" Version="0.8.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,13 +6,11 @@ using Xarial.XCad.SolidWorks;
 namespace WpfApp1.Services;
 
 
-[Title("Sample Add-In")]
-[Description("Sample 'Hello World' SOLIDWORKS add-in")]
-[ComVisible(true), Guid("31B803E0-7A01-4841-A0DE-895B726625C9")]
-public class Solidworks : SwAddInEx
+[ComVisible(true)]
+public class AddIn : SwAddInEx
 {
     public override void OnConnect()
     {
-        Application.ShowMessageBox("Hello World!");
+        Application.ShowMessageBox("Hello xCAD (.NET Framework)");
     }
 }
