@@ -5,8 +5,8 @@ namespace WpfApp1.Views;
 
 public partial class ProjectElements
 {
-    private Boolean isSelected = false;
-    
+    private int selectedType = 0;
+
     public ProjectElements()
     {
         InitializeComponent();
@@ -14,17 +14,32 @@ public partial class ProjectElements
 
     private void bInputHandler(object sender, RoutedEventArgs e)
     {
-
-        if (isSelected)
+        Window newWindow;
+        if (selectedType == 1)
         {
-            NewProjectWindow newWindow = new NewProjectWindow();
-            newWindow.Show();
-            isSelected = false;
+            newWindow = new NewProjectWindow();
         }
+        else if (selectedType == 2)
+        {
+            newWindow = new EditProjectForm();
+        }
+        else
+        {
+            return;
+        }
+
+        newWindow.ShowInTaskbar = false;
+        newWindow.Show();
+        selectedType = 0;
     }
 
-    private void tvSelectedListener(object sender, RoutedEventArgs e)
+    private void projectClickListener(object sender, RoutedEventArgs e)
     {
-        isSelected = true;
+        selectedType = 1;
+    }
+
+    private void projectElementClickListener(object sender, RoutedEventArgs e)
+    {
+        selectedType = 2;
     }
 }

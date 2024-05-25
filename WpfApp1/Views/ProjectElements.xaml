@@ -34,7 +34,7 @@
                     BorderBrush="LightSteelBlue" Margin="16, 0, 0, 0"
                     Click="bInputHandler">
                     <Viewbox Stretch="Uniform">
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" PreviewMouseDown="bInputHandler">
                             <Image Source="https://cdn-icons-png.flaticon.com/512/1432/1432525.png" Height="20"
                                    Width="20" />
                             <TextBlock Text="Ввод" FontSize="12" />
@@ -73,38 +73,40 @@
 
                 <TreeView x:Name="tvObjects" FontSize="16">
                     <TreeView.DataContext>
-                        <Binding Path="Projects" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}" />
+                        <Binding Path="Projects"
+                                 RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}" />
                     </TreeView.DataContext>
-                    
+
                     <TreeView.Resources>
-                        
-                        <HierarchicalDataTemplate DataType = "{x:Type models:Project}" ItemsSource = "{Binding Path=Elements}">
+
+                        <HierarchicalDataTemplate DataType="{x:Type models:Project}"
+                                                  ItemsSource="{Binding Path=Elements}">
+                            <TextBlock PreviewMouseDown="projectElementClickListener" Text="{Binding Name}"></TextBlock>
+                        </HierarchicalDataTemplate>
+
+                        <HierarchicalDataTemplate DataType="{x:Type models:ProjectElement}" ItemsSource="{Binding }">
                             <TextBlock Text="{Binding Name}"></TextBlock>
                         </HierarchicalDataTemplate>
-                        
-                        <HierarchicalDataTemplate DataType = "{x:Type models:ProjectElement}" ItemsSource = "{Binding }">
-                            <TextBlock Text="{Binding Name}"></TextBlock>
-                        </HierarchicalDataTemplate>
-                        
+
                     </TreeView.Resources>
 
-                    <TreeViewItem Header="Проекты" ItemsSource="{Binding}">
-                        
+                    <TreeViewItem Header="Проекты" ItemsSource="{Binding}" PreviewMouseDown="projectClickListener">
+
                     </TreeViewItem>
                 </TreeView>
 
-                <TreeView x:Name="tvLibModels" FontSize="16">
-
-                    <TreeViewItem Header="Библиотека моделей">
-                        <TreeViewItem Header="название библиотеки">
-                            <TreeViewItem Header="Файл 1" />
-                            <TreeViewItem Header="Файл 2" />
-                            <TreeViewItem Header="Файл 3" />
-                            <TreeViewItem Header="Файл 4" />
-                        </TreeViewItem>
-                    </TreeViewItem>
-
-                </TreeView>
+                <!-- <TreeView x:Name="tvLibModels" FontSize="16"> -->
+                <!-- -->
+                <!--     <TreeViewItem Header="Библиотека моделей"> -->
+                <!--         <TreeViewItem Header="название библиотеки"> -->
+                <!--             <TreeViewItem Header="Файл 1" /> -->
+                <!--             <TreeViewItem Header="Файл 2" /> -->
+                <!--             <TreeViewItem Header="Файл 3" /> -->
+                <!--             <TreeViewItem Header="Файл 4" /> -->
+                <!--         </TreeViewItem> -->
+                <!--     </TreeViewItem> -->
+                <!-- -->
+                <!-- </TreeView> -->
 
             </StackPanel>
 

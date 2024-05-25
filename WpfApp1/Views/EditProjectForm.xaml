@@ -240,7 +240,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Column="0">
-                <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0" HorizontalAlignment="Center">
+                <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0" HorizontalAlignment="Center" Click="CreateElement">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="https://cdn-icons-png.freepik.com/256/4315/4315445.png?semt=ais_hybrid" Height="20" Width="20" />
                         <TextBlock Text="Готово" FontSize="12" Margin="8,0,8,0"/>
@@ -248,7 +248,7 @@
                 </Button>
             </Grid>
             <Grid Column="1">
-                <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0" HorizontalAlignment="Center">
+                <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0" HorizontalAlignment="Center" Click="HideElement">
                     <StackPanel Orientation="Horizontal">
                         <Image Source="https://static.vecteezy.com/system/resources/thumbnails/017/350/132/small_2x/red-cancel-icon-design-png.png" Height="20" Width="20" />
                         <TextBlock Text="Отменить" FontSize="12" Margin="8,0,8,0"/>

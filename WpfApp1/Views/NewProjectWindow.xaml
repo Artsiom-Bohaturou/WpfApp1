@@ -4,78 +4,79 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:WpfApp1.Views"
+        xmlns:models="clr-namespace:WpfApp1.Models"
         mc:Ignorable="d"
         Title="Ввод нового проекта" Height="500" Width="450"
         ResizeMode="NoResize">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> 
-            <RowDefinition Height="Auto"/> 
-            <RowDefinition Height="Auto"/> 
-            <RowDefinition Height="Auto"/> 
-            <RowDefinition Height="*"/>    
-            <RowDefinition Height="Auto"/> 
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="0" Orientation="Vertical" Margin="16,16,0,0">
-            <TextBlock Text="Обозначение"/>
-            <TextBox Margin="0,8,0,0"/>
+            <TextBlock Text="Обозначение" />
+            <TextBox Margin="0,8,0,0" />
         </StackPanel>
 
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="16,16,0,0">
-            <TextBlock Text="Наименование"/>
-            <TextBox Margin="0,8,0,0"/>
+            <TextBlock Text="Наименование" />
+            <TextBox Margin="0,8,0,0" />
         </StackPanel>
 
         <StackPanel Grid.Row="2" Orientation="Vertical" Margin="16,16,0,0">
-            <TextBlock Text="Дата создания"/>
-            <TextBox Margin="0,8,0,0"/>
+            <TextBlock Text="Дата создания" />
+            <TextBox Margin="0,8,0,0" />
         </StackPanel>
-        
-        <TextBlock Grid.Row="3" Text="Параметры" Margin="0,8,0,0" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+        <TextBlock Grid.Row="3" Text="Параметры" Margin="0,8,0,0" HorizontalAlignment="Center" FontWeight="Bold" />
 
         <DataGrid Grid.Row="4" x:Name="ParamsDataGrid" AutoGenerateColumns="False">
             <DataGrid.Resources>
                 <Style TargetType="DataGridCell">
-                    <Setter Property="BorderThickness" Value="0.1"/>
-                    <Setter Property="BorderBrush" Value="LightGray"/>
+                    <Setter Property="BorderThickness" Value="0.1" />
+                    <Setter Property="BorderBrush" Value="LightGray" />
                 </Style>
                 <Style TargetType="DataGridRowHeader">
-                    <Setter Property="BorderThickness" Value="0.1"/>
-                    <Setter Property="BorderBrush" Value="LightGray"/>
+                    <Setter Property="BorderThickness" Value="0.1" />
+                    <Setter Property="BorderBrush" Value="LightGray" />
                 </Style>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="BorderThickness" Value="0.1"/>
-                    <Setter Property="BorderBrush" Value="LightGray"/>
+                    <Setter Property="BorderThickness" Value="0.1" />
+                    <Setter Property="BorderBrush" Value="LightGray" />
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Наименование" Width="*"/>
-                <DataGridTextColumn Header="Значение" Width="*"/>
-                <DataGridTextColumn Header="Ед. изм." Width="*"/>
+                <DataGridTextColumn Header="Наименование" Width="*" />
+                <DataGridTextColumn Header="Значение" Width="*" />
+                <DataGridTextColumn Header="Ед. изм." Width="*" />
             </DataGrid.Columns>
             <DataGrid.RowStyle>
                 <Style TargetType="DataGridRow">
-                    <Setter Property="Height" Value="Auto"/>
+                    <Setter Property="Height" Value="Auto" />
                 </Style>
             </DataGrid.RowStyle>
-            <DataGrid.Items>
-                <TextBlock Visibility="Hidden"/>
-            </DataGrid.Items>
         </DataGrid>
 
         <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,16,0,16">
-            <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0">
+            <Button Background="LightGray" BorderBrush="Blue" Margin="0,0,32,0" Click="CreateProject">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="https://cdn-icons-png.freepik.com/256/4315/4315445.png?semt=ais_hybrid" Height="20" Width="20" />
-                    <TextBlock Text="Готово" FontSize="12" Margin="8,0,8,0"/>
+                    <Image Source="https://cdn-icons-png.freepik.com/256/4315/4315445.png?semt=ais_hybrid" Height="20"
+                           Width="20" />
+                    <TextBlock Text="Готово" FontSize="12" Margin="8,0,8,0" />
                 </StackPanel>
             </Button>
 
-            <Button Background="LightGray" Margin="0,0,0,0">
+            <Button Background="LightGray" Margin="0,0,0,0" Click="HideWindow">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="https://static.vecteezy.com/system/resources/thumbnails/017/350/132/small_2x/red-cancel-icon-design-png.png" Height="20" Width="20" />
-                    <TextBlock Text="Отменить" FontSize="12" Margin="8,0,8,0"/>
+                    <Image
+                        Source="https://static.vecteezy.com/system/resources/thumbnails/017/350/132/small_2x/red-cancel-icon-design-png.png"
+                        Height="20" Width="20" />
+                    <TextBlock Text="Отменить" FontSize="12" Margin="8,0,8,0" />
                 </StackPanel>
             </Button>
         </StackPanel>
