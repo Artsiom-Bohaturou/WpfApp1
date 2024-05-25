@@ -1,6 +1,7 @@
 using System.Windows;
 using WpfApp1.Services;
 using WpfApp1.Views;
+using SolidWorks.Interop.sldworks;
 
 namespace WpfApp1;
 
